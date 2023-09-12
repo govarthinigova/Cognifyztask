@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+h1 {text-align: center;}
+</style>
+<h1>TOURIST PLACES<h1>
+    <title>Gallery</title>
+</head>
+<body>
+    <div class="gallery">
+        <div class="main-image">
+<body>
+  <div class="nav">
+<a href="#">Hill</a>
+    <a href="#">Beach</a>
+    <a href="#">Village</a>
+<a href="#">Contact us</a>
+  </div>
+</body>
+            <img src="img2.jpg" alt="Image 1">
+        </div>
+        <div class="thumbnails">
+            <img src="img3.jpeg" alt="Thumbnail 1" data-image="img2.jpg">
+            <img src="img4.jpeg" alt="Thumbnail 2" data-image="img2.jpg">
+            <img src="img7.jpeg" alt="Thumbnail 3" data-image="img2.jpg">
+        </div>
+    </div>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e2caca;
+}
+
+.gallery {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fdfdfd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.main-image img {
+    max-width: 100%;
+    display: block;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.thumbnails img {
+    max-width: 100%;
+    margin-right: 10px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.3s ease;
+}
+
+.thumbnails img:hover {
+    border: 2px solid #007bff;
+}
+ body {
+      font-family:Courier;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+background-color:LightGray;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+</style>
+<body>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    const thumbnails = document.querySelectorAll(".thumbnails img");
+    const mainImage = document.querySelector(".main-image img");
+
+    thumbnails.forEach((thumbnail) => {
+        thumbnail.addEventListener("click", function () {
+            const imagePath = thumbnail.getAttribute("data-image");
+            mainImage.setAttribute("src", imagePath);
+        });
+    });
+
+    let currentIndex = 0;
+
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % thumbnails.length;
+        const imagePath = thumbnails[currentIndex].getAttribute("data-image");
+        mainImage.setAttribute("src", imagePath);
+    }
+
+    // Auto image slideshow
+    setInterval(showNextImage, 3000); // Change image every 3 seconds
+});
+</script>
+</body>
+</body>
+</html>
+
